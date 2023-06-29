@@ -3,11 +3,12 @@
         <li>
             <a href="/">Home</a>
         </li>
-        <li>→</li>
-        <li>
-            <a href="{{ route('jobs.index') }}">Jobs</a>
-        </li>
-        <li>→</li>
-        <li>{{ $job->title }}</li>
+
+        @foreach ($links as $label => $link)
+            <li>→</li>
+            <li>
+                <a href="{{ $link }}">{{ $label }}</a>
+            </li>
+        @endforeach
     </ul>
 </nav>
